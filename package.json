@@ -1,0 +1,30 @@
+{
+  "name": "fabricant",
+  "version": "0.0.1",
+  "description": "Tiny library for doing ES6 Unity3D-style object oriented composition",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "babel-runtime": "^5.5.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davedx/fabricant.git"
+  },
+  "keywords": [
+    "composition",
+    "es6",
+    "factory"
+  ],
+  "author": "Dave Clayton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davedx/fabricant/issues"
+  },
+  "homepage": "https://github.com/davedx/fabricant"
+}
