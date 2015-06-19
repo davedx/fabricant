@@ -28,16 +28,20 @@ class ScrollableList {
 }
 
 var Button = {
+	defaultSkin: "blue_steel",
 	components: [Clickable, Focusable]
 }
 
 var DropDown = {
+	defaultSkin: "blue_steel",
 	components: [Clickable, Focusable, Expandable, ScrollableList]
 }
 
 let MyButton = Fabricate(Button);
 MyButton.name = "MyButton";
 MyButton.components.get(Clickable).select();
+
+console.log("Skin: "+MyButton.defaultSkin);
 
 let MyDropDown = Fabricate(DropDown);
 MyDropDown.name = "MyDropDown";
