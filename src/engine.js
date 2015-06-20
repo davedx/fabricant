@@ -12,7 +12,7 @@ class Mover {
 
 class Health {
 	start() {
-
+		console.log("Initializing "+this.host.name+" health to max hps");
 	}
 
 	update() {
@@ -57,17 +57,35 @@ class Engine {
 
 	start() {
 		let deltaTime = 1000;
+
+		// call start method to let everything do initialization
+		this.scene.forEach(node => {
+			if(node.start) {
+				node.start();
+			}
+			if(node.components) {
+				node.components.forEach(component => {
+					if(component.start) {
+						component.start();
+					}
+				});
+			}
+		});
+
+		// lock frame rate and update components each frame
 		setInterval(f => {
 			console.log("Tick");
 			this.scene.forEach(node => {
 				if(node.update) {
 					node.update(deltaTime);
 				}
-				node.components.forEach(component => {
-					if(component.update) {
-						component.update(deltaTime);
-					}
-				})
+				if(node.components) {
+					node.components.forEach(component => {
+						if(component.update) {
+							component.update(deltaTime);
+						}
+					})
+				}
 			})
 		}, deltaTime);
 	}
