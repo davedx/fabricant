@@ -8,9 +8,13 @@
     "gulp-babel": "^5.1.0",
     "babel-runtime": "^5.5.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "mocha-babel": "^3.0.0",
+    "expect": "^1.6.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers js:mocha-babel test/*.js"
   },
   "repository": {
     "type": "git",

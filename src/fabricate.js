@@ -1,11 +1,18 @@
 function Fabricate(prefab) {
-	let host = Object.create(prefab);
+	const host = Object.create(prefab);
 	host.components = new Map();
-	prefab.components.forEach(component => {
-		var componentInst = new component();
-		componentInst.host = host;
-		host.components.set(component, componentInst);
-	});
+	if(prefab.components) {
+		prefab.components.forEach(component => {
+			let componentInst;
+			if(component.prototype && component.prototype.constructor) {
+				componentInst = new component();
+			} else {
+				componentInst = Object.create(component);
+			}
+			componentInst.host = host;
+			host.components.set(component, componentInst);
+		});
+	}
 	return host;
 }
 
