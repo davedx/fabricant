@@ -1,4 +1,4 @@
-import Fabricate from "./fabricate";
+import Fabricate from "../fabricate";
 
 class Mover {
 	start() {

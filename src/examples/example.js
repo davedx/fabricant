@@ -1,4 +1,4 @@
-import Fabricate from "./fabricate";
+import Fabricate from "../fabricate";
 
 class Clickable {
 	select() {
@@ -27,21 +27,21 @@ class ScrollableList {
 	// ...
 }
 
-let Button = {
+const Button = {
 	defaultSkin: "blue_steel",
 	components: [Clickable, Focusable]
 }
 
-let DropDown = {
+const DropDown = {
 	defaultSkin: "blue_steel",
 	components: [Clickable, Focusable, Expandable, ScrollableList]
 }
 
-let MyButton = Fabricate(Button);
+const MyButton = Fabricate(Button);
 MyButton.name = "MyButton";
 MyButton.components.get(Clickable).select();
 console.log("Skin: "+MyButton.defaultSkin);
 
-let MyDropDown = Fabricate(DropDown);
+const MyDropDown = Fabricate(DropDown);
 MyDropDown.name = "MyDropDown";
 MyDropDown.components.get(Clickable).select();
