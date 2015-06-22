@@ -7,7 +7,8 @@ A tiny library for doing ES6 Unity3D-style object oriented composition.
 ```
 import Fabricate from "../fabricate";
 
-// 1. Define your components - these are where all of your composed object's behaviour resides
+// 1. Define your components - these are where all of your composed object's
+// behaviour resides
 
 class Focusable {
 	focus() {
@@ -24,13 +25,19 @@ class Clickable {
 	}
 }
 
-// 2. Define the prefab for your composed object - this is a blueprint that says what default
-// properties your object has, and which components it requires
+// 2. Define the prefab for your composed object - this is a blueprint that
+// says what default properties your object has, and which components it requires
 
 const Button = {
 	defaultSkin: "blue_steel",
 	components: [Clickable, Focusable]
 }
+
+// 3. Fabricate the prefab as many times as you want to create instances
+
+const MyButton = Fabricate(Button);
+MyButton.components.get(Clickable).select();
+
 ```
 
 # Rationale
