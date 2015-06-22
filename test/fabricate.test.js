@@ -13,6 +13,20 @@ describe('Fabrication', () => {
 		constructor() {
 			// ...
 		}
+
+		isAuthed() {
+			return true;
+		}
+	}
+
+	class ProfileClass {
+		getProfile() {
+			const auth = this.host.components.get(AuthenticatorClass);
+			if(auth.isAuthed()) {
+				return {email: "dave@example.com"};
+			}
+			throw new Error("Not authenticated");
+		}
 	}
 
 	const userWithES6ClassAsComponent = {
@@ -25,6 +39,11 @@ describe('Fabrication', () => {
 	const userWithPlainObjectAsComponent = {
 		name: "Bob",
 		components: [AuthenticatorObject]
+	};
+
+	const userWithAuthAndProfile = {
+		name: "Dave",
+		components: [AuthenticatorClass, ProfileClass]
 	};
 
 	it("should not crash from having no components", () => {
@@ -41,5 +60,13 @@ describe('Fabrication', () => {
 	it("should be able to create components from POJSOs", () => {
 		const newUser = Fabricate(userWithPlainObjectAsComponent);
 		expect(newUser.name).toBe("Bob");
+	});
+
+	it("should allow access to host object and other sibling components from components", () => {
+		const user = Fabricate(userWithAuthAndProfile);
+		const profileComponent = user.components.get(ProfileClass);
+		expect(profileComponent.host).toBe(user);
+		expect(profileComponent.host.components.get(AuthenticatorClass)).toBeA(AuthenticatorClass);
+		expect(profileComponent.getProfile().email).toBe("dave@example.com");
 	});
 });
