@@ -1,4 +1,7 @@
 function Fabricate(prefab) {
+	if(!prefab) {
+		throw new Error("No prefab passed to Fabricate.");
+	}
 	const host = Object.create(prefab);
 	host.components = new Map();
 	if(prefab.components) {

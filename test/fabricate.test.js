@@ -46,6 +46,12 @@ describe('Fabrication', () => {
 		components: [AuthenticatorClass, ProfileClass]
 	};
 
+	it("should throw nicely if empty/no prefab is passed in", () => {
+		expect(() => {
+			const stuff = Fabricate();
+		}).toThrow(/prefab/);
+	});
+
 	it("should not crash from having no components", () => {
 		const user = Fabricate(userNoComponents);
 		expect(user.name).toBe("Sam");
