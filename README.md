@@ -59,3 +59,6 @@ Examples are in the src/examples directory, and are compiled by gulp to dist/exa
     gulp;node dist/examples/example
     gulp;node dist/examples/engine
 
+# Tests
+
+    npm test
