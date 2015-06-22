@@ -1,6 +1,6 @@
 {
   "name": "fabricant",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Tiny library for doing ES6 Unity3D-style object oriented composition",
   "main": "gulpfile.js",
   "dependencies": {
