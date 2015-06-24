@@ -54,10 +54,10 @@ Therefore I have written this very simple library to "fabricate" objects from pr
 
 # Examples
 
-Examples are in the src/examples directory, and are compiled by gulp to dist/examples. You can run them most easily with node:
+Examples are in the src/examples directory, and are compiled by gulp to lib/examples. You can run them most easily with node:
 
-    gulp;node dist/examples/example
-    gulp;node dist/examples/engine
+    gulp;node lib/examples/example
+    gulp;node lib/examples/engine
 
 # Tests
 
