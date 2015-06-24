@@ -2,7 +2,7 @@
   "name": "fabricant",
   "version": "0.2.0",
   "description": "Tiny library for doing ES6 Unity3D-style object oriented composition",
-  "main": "gulpfile.js",
+  "main": "lib/fabricate.js",
   "dependencies": {
     "gulp": "^3.9.0",
     "gulp-babel": "^5.1.0",
@@ -14,6 +14,8 @@
     "expect": "^1.6.0"
   },
   "scripts": {
+    "compile": "gulp",
+    "prepublish": "npm run compile",
     "test": "mocha --compilers js:mocha-babel test/*.js"
   },
   "repository": {
