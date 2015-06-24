@@ -1,6 +1,8 @@
 # Fabricant
 
-A tiny library for doing ES6 Unity3D-style object oriented composition.
+ES6 composition with components and prefabs, Unity3D-style.
+
+Host objects are simple data containers. Behaviour is encapsulated in components. Components are automatically instantiated on object creation, and it's easy to interoperate between components via the host object.
 
 ## Usage
 
