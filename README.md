@@ -42,7 +42,7 @@ MyButton.components.get(Clickable).select();
 
 # Rationale
 
-Currently there are a lot of approaches to merging behaviours of objects in JavaScript. The original, prototypal inheritance, is very flexible but error prone and has too much boilerplate. ES6 provides a basic foundation for more concise object oriented programming in JavaScript with the addition of the class and extends keywords, but many people [who?] argue composition is a better road to behaviour reusability than inheritance.
+Currently there are a lot of approaches to merging behaviours of objects in JavaScript. The original, prototypal inheritance, is very flexible but error prone and has too much boilerplate. ES6 provides a basic foundation for more concise object oriented programming in JavaScript with the addition of the class and extends keywords, but [many people](https://en.wikipedia.org/wiki/Composition_over_inheritance) argue [composition is a better road](https://lostechies.com/chadmyers/2010/02/13/composition-versus-inheritance/) to behaviour reusability than inheritance.
 
 Facebook made a strong case for composition when they introduced React, using Mixins to "mix behaviour in" to class components. However, ES6 is not compatible with this approach, so they are now looking at approaches such as [functional composition](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750) (or "higher order components").
 
