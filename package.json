@@ -1,6 +1,6 @@
 {
   "name": "fabricant",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Tiny library for doing ES6 Unity3D-style object oriented composition",
   "main": "lib/fabricate.js",
   "dependencies": {
