@@ -42,6 +42,23 @@ MyButton.components.get(Clickable).select();
 
 ```
 
+# Examples
+
+Examples are in the src/examples directory, and are compiled by gulp to lib/examples. You can run them most easily with node:
+
+    gulp;node lib/examples/example
+    gulp;node lib/examples/engine
+    
+# Project example
+
+There is a fuller example I am working on using fabricant with THREE at:
+
+https://github.com/davedx/architect
+
+# Tests
+
+    npm test
+
 # Rationale
 
 Currently there are a lot of approaches to merging behaviours of objects in JavaScript. The original, prototypal inheritance, is very flexible but error prone and has too much boilerplate. ES6 provides a basic foundation for more concise object oriented programming in JavaScript with the addition of the class and extends keywords, but [many people](https://en.wikipedia.org/wiki/Composition_over_inheritance) argue [composition is a better road](https://lostechies.com/chadmyers/2010/02/13/composition-versus-inheritance/) to behaviour reusability than inheritance.
@@ -51,14 +68,3 @@ Facebook made a strong case for composition when they introduced React, using Mi
 This approach is nice, but I *personally* find the Unity3D approach (I've also seen this used in a big games studio I worked for in a C++ code base) more readable, and also more complementary to object oriented code.
 
 Therefore I have written this very simple library to "fabricate" objects from prefabs that define which components they need. All of the code defining the behaviour of the "thing" you are implementing should be in the components; the "host" object is simply a container for the components. This keeps composition very clean; the only way to build behaviour is by mixing different components together. There is no extra code in the host object itself, like there is in a React component.
-
-# Examples
-
-Examples are in the src/examples directory, and are compiled by gulp to lib/examples. You can run them most easily with node:
-
-    gulp;node lib/examples/example
-    gulp;node lib/examples/engine
-
-# Tests
-
-    npm test
