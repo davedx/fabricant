@@ -6,7 +6,7 @@ Host objects are simple data containers. Behaviour is encapsulated in components
 
 ## Usage
 
-   npm install fabricant --save-dev
+    npm install fabricant
 
 ```
 import Fabricate from "../fabricate";
