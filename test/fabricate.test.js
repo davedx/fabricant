@@ -1,6 +1,6 @@
 import mocha from 'mocha';
 import expect from 'expect';
-import Fabricate from '../dist/fabricate';
+import Fabricate from '../lib/fabricate';
 
 describe('Fabrication', () => {
 
